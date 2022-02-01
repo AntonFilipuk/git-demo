@@ -1,0 +1,118 @@
+
+Антон@-- MINGW32 ~
+$ cd /c/data/temp
+bash: cd: /c/data/temp: No such file or directory
+
+Антон@-- MINGW32 ~
+$ cd /d/GITTT
+
+Антон@-- MINGW32 /d/GITTT
+$ git clone ^[[200~32 /d/GITTT
+fatal: repository '?[200~32' does not exist
+
+Антон@-- MINGW32 /d/GITTT
+$ git clone git@github.com:AntonFilipuk/git-demo.git
+Cloning into 'git-demo'...
+The authenticity of host 'github.com (140.82.121.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enter passphrase for key '/c/Users/Антон/.ssh/id_rsa':
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+Антон@-- MINGW32 /d/GITTT
+$ ls
+git-demo/
+
+Антон@-- MINGW32 /d/GITTT
+$ cd git-demo
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git remote -v
+origin  git@github.com:AntonFilipuk/git-demo.git (fetch)
+origin  git@github.com:AntonFilipuk/git-demo.git (push)
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        song.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git add song.txt
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   song.txt
+
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git commit -m "add word Helloy"
+[main b21f82b] add word Helloy
+ 1 file changed, 1 insertion(+)
+ create mode 100644 song.txt
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git log
+commit b21f82b141996aa210026122a618a5f07d9f97e7 (HEAD -> main)
+Author: Anton Filipuk <filipukanton@gmail.com>
+Date:   Tue Feb 1 18:16:02 2022 +0300
+
+    add word Helloy
+
+commit 1482598785a90cd15b4c9016b339d15487da836f (origin/main, origin/HEAD)
+Author: Anton Filipuk <98780515+AntonFilipuk@users.noreply.github.com>
+Date:   Tue Feb 1 18:01:56 2022 +0300
+
+    Initial commit
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git push
+Enter passphrase for key '/c/Users/Антон/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:AntonFilipuk/git-demo.git
+   1482598..b21f82b  main -> main
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$ git pull
+Enter passphrase for key '/c/Users/Антон/.ssh/id_rsa':
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.32 KiB | 2.00 KiB/s, done.
+From github.com:AntonFilipuk/git-demo
+   b21f82b..18e90c2  main       -> origin/main
+Updating b21f82b..18e90c2
+Fast-forward
+ song.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Антон@-- MINGW32 /d/GITTT/git-demo (main)
+$
